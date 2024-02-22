@@ -165,6 +165,6 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
     });
   } catch (err: any) {
     fastify.log.error(err);
-    process.exit(1);
+    // process.exit(1);
   }
 })();
