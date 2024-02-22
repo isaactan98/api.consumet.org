@@ -32,6 +32,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
     maxParamLength: 1000,
     logger: true,
   });
+  console.log('process.env.NODE_ENV:: ', process.env.NODE_ENV);
   await fastify.register(FastifyCors, {
     origin: '*',
     methods: 'GET',
