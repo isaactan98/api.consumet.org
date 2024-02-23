@@ -58,6 +58,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
   // await fastify.register(Utils, { prefix: '/utils' });
 
   try {
+    console.log("is inside try block")
     fastify.get('/', (_, rp) => {
       rp.status(200).send(
         `Welcome to consumet api! 🎉 \n${process.env.NODE_ENV === 'DEMO'
@@ -72,12 +73,14 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
         error: 'page not found',
       });
     });
+    console.log("is inside try block")
 
     fastify.listen({ port: PORT, host: '0.0.0.0' }, (e, address) => {
       if (e) throw e;
       console.log(`server listening on ${address}`);
     });
   } catch (err: any) {
+    console.log("is inside catch block", err)
     fastify.log.error(err);
     process.exit(1);
   }
