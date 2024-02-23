@@ -47,7 +47,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
     );
 
   // await fastify.register(books, { prefix: '/books' });
-  await fastify.register(anime, { prefix: '/anime' });
+  // await fastify.register(anime, { prefix: '/anime' });
   // await fastify.register(manga, { prefix: '/manga' });
   // //await fastify.register(comics, { prefix: '/comics' });
   // await fastify.register(lightnovels, { prefix: '/light-novels' });
@@ -79,6 +79,6 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
     });
   } catch (err: any) {
     fastify.log.error(err);
-    // process.exit(1);
+    process.exit(1);
   }
 })();
