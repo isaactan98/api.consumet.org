@@ -58,6 +58,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
   // await fastify.register(Utils, { prefix: '/utils' });
 
   fastify.get('/', (_, rp) => {
+    console.log('is inside get /');
     rp.status(200).send(
       `Welcome to consumet api! 🎉 \n${process.env.NODE_ENV === 'DEMO'
         ? 'This is a demo of the api. You should only use this for testing purposes.'
