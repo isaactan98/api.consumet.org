@@ -75,10 +75,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
 
   try {
     console.log("is inside try block")
-    fastify.listen({ port: PORT }, (e) => {
-      if (e) throw e;
-      console.log(`server listening on ${fastify.server.address()?.toString()}`);
-    });
+    fastify.listen({ port: PORT }, (e) => { if (e) throw e });
   } catch (err: any) {
     console.log("is inside catch block", err)
     fastify.log.error(err);
