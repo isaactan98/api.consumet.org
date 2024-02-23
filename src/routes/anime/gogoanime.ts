@@ -5,7 +5,7 @@ import { StreamingServers } from '@consumet/extensions/dist/models';
 const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
   const gogoanime = new ANIME.Gogoanime();
 
-  fastify.get('/', (_, rp) => {
+  fastify.get('/', async (_, rp) => {
     rp.status(200).send({
       intro:
         "Welcome to the gogoanime provider: check out the provider's website @ https://www1.gogoanime.bid/",
