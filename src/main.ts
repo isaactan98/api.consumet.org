@@ -33,10 +33,10 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
     logger: true,
   });
   console.log('process.env.NODE_ENV:: ', process.env.NODE_ENV);
-  await fastify.register(FastifyCors, {
-    origin: '*',
-    methods: 'GET',
-  });
+  // await fastify.register(FastifyCors, {
+  //   origin: '*',
+  //   methods: 'GET',
+  // });
 
   console.log(chalk.green(`Starting server on port ${PORT}... 🚀`));
   if (!process.env.REDIS_HOST)
@@ -60,10 +60,9 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
   try {
     fastify.get('/', (_, rp) => {
       rp.status(200).send(
-        `Welcome to consumet api! 🎉 \n${
-          process.env.NODE_ENV === 'DEMO'
-            ? 'This is a demo of the api. You should only use this for testing purposes.'
-            : ''
+        `Welcome to consumet api! 🎉 \n${process.env.NODE_ENV === 'DEMO'
+          ? 'This is a demo of the api. You should only use this for testing purposes.'
+          : ''
         }`,
       );
     });
